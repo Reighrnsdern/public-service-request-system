@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}New request{% endblock %}{% block content %}
+<div class="form-panel mx-auto"><span class="eyebrow">SERVICE REQUEST</span><h2 class="fw-bold mt-2">Tell us what you need</h2><p class="text-muted">Provide enough detail to help the department respond.</p>
+<form method="post"><label class="form-label">Service category</label><select class="form-select mb-3" name="service" required><option value="">Choose a category</option><option>Roads and transport</option><option>Water and sanitation</option><option>Business permits</option><option>Public health</option><option>Land and rates</option><option>Waste collection</option><option>Other county service</option></select>
+<label class="form-label">Request subject</label><input class="form-control mb-3" name="subject" maxlength="120" placeholder="Briefly describe the issue" required>
+<label class="form-label">Location</label><input class="form-control mb-3" name="location" placeholder="Area, ward, or nearest landmark" required>
+<label class="form-label">Description</label><textarea class="form-control mb-4" name="details" rows="5" placeholder="Explain the request and any relevant details..." required></textarea>
+<button class="btn btn-primary">Submit request</button> <a class="btn btn-outline-secondary" href="{{ url_for('dashboard') }}">Cancel</a></form></div>{% endblock %}

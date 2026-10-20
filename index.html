@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}Public Service Portal{% endblock %}{% block content %}
+<section class="hero p-4 p-md-5 rounded-4 mb-4">
+ <span class="eyebrow">CITIZEN SERVICES, MADE SIMPLE</span>
+ <h1 class="display-5 fw-bold mt-3">Your voice. Your county. Your service.</h1>
+ <p class="lead mt-3 mb-4">Submit a service request, follow its progress, and stay informed from one simple portal.</p>
+ <a class="btn btn-light btn-lg me-2" href="{{ url_for('register') }}">Get started</a><a class="btn btn-outline-light btn-lg" href="{{ url_for('track') }}">Track a request</a>
+</section>
+<div class="row g-3">
+ {% for icon, title, desc in [('✍️','Submit a request','Tell the relevant department what service you need.'),('🔎','Track progress','Use your reference number to check the latest status.'),('📋','Clear updates','Requests can be marked submitted, in progress, resolved, or rejected.')] %}
+ <div class="col-md-4"><div class="feature-card h-100"><div class="feature-icon">{{ icon }}</div><h5>{{ title }}</h5><p class="text-muted mb-0">{{ desc }}</p></div></div>
+ {% endfor %}
+</div>
+<div class="notice mt-4"><strong>Demo portal:</strong> This is a student project prototype and is not an official government website.</div>
+{% endblock %}
